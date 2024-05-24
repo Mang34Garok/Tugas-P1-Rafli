@@ -1,39 +1,41 @@
-#include <iostream>
-#include <string>
+#include <iostream> // Mengimpor pustaka iostream untuk operasi input/output.
+#include <string>   //Mengimpor pustaka  string untuk penggunaan tipe data string.
 
-class Person {
+class Person {      // Mendefinisikan sebuah kelas bernama Person.
     private:
-        std::string nama;
+        std::string nama; // Mendefinisikan atribut privat nama bertipe data std::string untuk menyimpan nama seseorang.
   public:
         Person () {
-       std::cout << "Aku Telah Lahir Didunia" << std::endl;
+       std::cout << "Aku Telah Lahir Didunia" << std::endl; // Konstruktor tanpa parameter yang akan mencetak pesan "Aku Telah Lahir Didunia" saat objek dibuat.
     }
     
         Person (const std::string nama) {
         std::cout << "manusia bernama "  << nama << " telah lahir" << std::endl;
-        this->nama = nama;
+        this->nama = nama; // Konstruktor lain yang menerima parameter nama dan mencetak pesan yang mengandung nama tersebut.
+                               Mengatur atribut nama dengan nilai dari parameter yang diterima.
     }   
     
         void introduce() {
-            std::cout <<"Halo Nama saya " << this->nama << std::endl;
+            std::cout <<"Halo Nama saya " << this->nama << std::endl; // Metode introduce() yang mencetak pesan "Halo Nama saya" diikuti dengan nama objek saat ini.
         }
     std::string getnama() {
-        return this-> nama;
+        return this-> nama; // Metode getnama() yang mengembalikan nilai atribut nama
     }
         void introduce(Person obj) {
             std::string yudhi = obj.getnama();
-            std::cout <<"Halo" << yudhi << "nama saya adalah: " << this->nama<< std::endl; 
+            std::cout <<"Halo" << yudhi << "nama saya adalah: " << this->nama<< std::endl; // Metode introduce() kedua yang menerima objek Person sebagai parameter.
+Mengambil nama dari objek yang diberikan, kemudian mencetak pesan yang mencantumkan nama objek tersebut serta nama objek yang memanggil metode ini.
         }
  
 };  
    
-   int main() {
-       Person Hitler;
-       Person Hitler2("Hitler");
-       Hitler2.introduce();
-       Person Hitler3("Yudhi");
-       Hitler2.introduce(Hitler 3);
+   int main() {  // Fungsi `main()` sebagai titik awal program.
+       Person Hitler; // Membuat objek Hitler dengan menggunakan konstruktor tanpa parameter.
+       Person Hitler2("Hitler"); //  Membuat objek `Hitler2` dengan menggunakan konstruktor yang menerima parameter nama
+       Hitler2.introduce();  // Memanggil metode introduce() dari objek Hitler2 untuk mencetak pesan pengenalan diri
+       Person Hitler3("Yudhi"); // Membuat objek `Hitler3` dengan menggunakan konstruktor yang menerima parameter nama.
+       Hitler2.introduce(Hitler 3); // Memanggil metode introduce() kedua dari objek Hitler2, dengan objek Hitler3 sebagai parameter, untuk mencetak pesan pengenalan diri yang mencakup nama dari objek Hitler3.
    
-       return 0;
+       return 0; // Mengembalikan nilai 0, menandakan bahwa program berakhir tanpa masalah.
    }
        
